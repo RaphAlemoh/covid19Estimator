@@ -21,10 +21,10 @@ const covid19ImpactEstimator = (data) => {
       return Math.ceil(hospitalBeds - this.severeCasesByRequestedTime);
     },
     get casesForICUByRequestedTime() {
-      return this.infectionsByRequestedTime * 0.05;
+      return Math.ceil(this.infectionsByRequestedTime * 0.05);
     },
     get casesForVentilatorsByRequestedTime() {
-      return this.infectionsByRequestedTime * 0.02;
+      return Math.ceil(this.infectionsByRequestedTime * 0.02);
     },
     get dollarsInFlight() {
       return this.infectionsByRequestedTime * population * income * days;
