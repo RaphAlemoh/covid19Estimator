@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 const covid19ImpactEstimator = (data) => {
   const income = data.region.avgDailyIncomeInUSD;
   const population = data.region.avgDailyIncomePopulation;
