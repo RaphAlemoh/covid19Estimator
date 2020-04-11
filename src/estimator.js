@@ -1,4 +1,3 @@
-/* eslint-disable radix */
 const covid19ImpactEstimator = (data) => {
   const income = data.region.avgDailyIncomeInUSD;
   const population = data.region.avgDailyIncomePopulation;
@@ -28,7 +27,7 @@ const covid19ImpactEstimator = (data) => {
       return this.infectionsByRequestedTime * 0.02;
     },
     get dollarsInFlight() {
-      return parseInt((this.infectionsByRequestedTime * population * income) / days);
+      return Math.trunc((this.infectionsByRequestedTime * population * income) / days);
     }
   };
   const severeImpact = {
@@ -56,7 +55,7 @@ const covid19ImpactEstimator = (data) => {
 
     get dollarsInFlight() {
       const severeDollars = this.infectionsByRequestedTime * population;
-      return parseInt((severeDollars * data.region.avgDailyIncomeInUSD) / days);
+      return Math.trunc((severeDollars * data.region.avgDailyIncomeInUSD) / days);
     }
   };
   return {
