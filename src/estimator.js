@@ -24,7 +24,7 @@ const covid19ImpactEstimator = (data) => {
       return this.infectionsByRequestedTime * 0.05;
     },
     get casesForVentilatorsByRequestedTime() {
-      return this.infectionsByRequestedTime * 0.02;
+      return Math.trunc(this.infectionsByRequestedTime * 0.02);
     },
     get dollarsInFlight() {
       return Math.trunc((this.infectionsByRequestedTime * population * income) / days);
@@ -50,7 +50,7 @@ const covid19ImpactEstimator = (data) => {
     },
 
     get casesForVentilatorsByRequestedTime() {
-      return this.infectionsByRequestedTime * 0.02;
+      return Math.trunc(this.infectionsByRequestedTime * 0.02);
     },
 
     get dollarsInFlight() {
