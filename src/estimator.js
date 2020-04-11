@@ -29,7 +29,7 @@ const covid19ImpactEstimator = (data) => {
       return Math.trunc(this.infectionsByRequestedTime * 0.02);
     },
     get dollarsInFlight() {
-      return this.infectionsByRequestedTime * population * income * days;
+      return (this.infectionsByRequestedTime * population * income) / days;
     }
   };
   const severeImpact = {
@@ -56,7 +56,7 @@ const covid19ImpactEstimator = (data) => {
     },
 
     get dollarsInFlight() {
-      return this.infectionsByRequestedTime * population * data.region.avgDailyIncomeInUSD * days;
+      return (this.infectionsByRequestedTime * population * data.region.avgDailyIncomeInUSD) / days;
     }
   };
   return {
