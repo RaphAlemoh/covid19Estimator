@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Covid19Estimator">
     <meta name="author" content="AlemsBaja">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <style>
+    input{
+        margin:20px;
+    }
+    </style>
   </head>
   <body>
       <div class="container">
@@ -18,27 +22,32 @@
                 <form action="info.php" method="post" class="form" role="form">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <div class="form-group"><label class="small mb-1" for="inputFirstName">Population</label>
+                            <div class="form-group">
+                                <label class="small mb-1" for="data-population">Population</label>
                                 <input class="form-control py-4" data-population="population" name="population" id="data-population" type="text" placeholder="Enter population" required></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group"><label class="small mb-1" for="inputLastName">Time to Elapse</label>
+                            <div class="form-group">
+                                <label class="small mb-1" for="data-time-to-elapse">Time to Elapse</label>
                                 <input class="form-control py-4" data-time-to-elapse="timeToElapse" name="period" id="data-time-to-elapse" type="text" placeholder="Enter time to elapse"  required></div>
                         </div>
                     </div>
 
-                    <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Reported Cases</label>
+                    <div class="form-group">
+                        <label class="small mb-1" for="data-reported-cases">Reported Cases</label>
                         <input class="form-control py-4" data-reported-cases="reportedCases" name="reportedCases" id="data-reported-cases" type="text" placeholder="Enter reported cases" required/>
                     </div>
 
                     <div class="form-row">
                             <div class="col-md-6">
-                                <div class="form-group"><label class="small mb-1" for="inputFirstName">Total Hospital Beds</label>
+                                <div class="form-group">
+                                    <label class="small mb-1" for="data-total-hospital-beds">Total Hospital Beds</label>
                                     <input class="form-control py-4" data-total-hospital-beds="totalHospitalBeds" name="hospitalBeds" id="data-total-hospital-beds" type="text" placeholder="Enter number of beds" required></div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group"><label class="small mb-1" for="inputLastName">Period Type</label>
-                                    <select class="form-control py-4"  data-period-type="periodType" id="data-period-type" name="periodType"  required>
+                                <div class="form-group">
+                                    <label class="small mb-1" for="data-period-type">Period Type</label>
+                                    <select style="margin:5px;" class="form-control py-4"  data-period-type="periodType" id="data-period-type" name="periodType"  required>
                                         <option value="Days">Days</option>
                                         <option value="Weeks">Weeks</option>
                                         <option value="Months">Months</option>
@@ -46,16 +55,11 @@
                             </div>
                     </div>
                     <div class="form-group mt-4 mb-0 text-center">
-                        <button class="btn btn-success shadow-lg border-0 rounded" type="submit" data-go-estimate="data-go-estimate" id="data-go-estimate">Estimate</a></button>
+                        <button style="border-radius:1px solid gray; margin:5px;" class="btn btn-success shadow-lg border-0 rounded" type="submit" data-go-estimate="data-go-estimate" id="data-go-estimate">Estimate</a></button>
                     </div>
                 </form>
             </div>  
           </div>
       </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script> -->
   </body>
 </html>
